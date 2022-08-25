@@ -13,7 +13,7 @@ module.exports.connect = async () => {
 
     const mongooseOpts = {
         useNewUrlParser: true,
-        dbName: "summarystatistics"
+        dbName: process.env.DB_NAME
     };
     try {
         await mongoose.connect(uri, mongooseOpts);

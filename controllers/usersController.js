@@ -2,6 +2,7 @@ const users = require('../models/users');
 const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const debug = require('debug')('summarystatistics:users:controller');
+require('dotenv').config();
 
 /**
  * @description Register function to register a new user
@@ -53,7 +54,7 @@ exports.register = async (req, res) => {
         debug('user registered  successfully');
 
         // return new user
-        return res.status(201).json(user);
+        return res.status(200).json(user);
     } catch (err) {
         console.error('register API failed');
         console.error(err);
