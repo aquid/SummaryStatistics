@@ -7,6 +7,7 @@ You can run the app locally using node.
 -> Download/clone the app 
 -> Go into the root directory
 -> run npm install
+-> create .env in the root using sample file and update values
 -> run npm start
 ```
 
@@ -14,6 +15,7 @@ Run Using docker
 ```
 -> Download/clone the app 
 -> Go into the root directory
+-> create .env in the root using sample file and update values
 -> run command "docker-compose up"
 ```
 
@@ -211,8 +213,18 @@ Sample output 2 - [
         "max": 90000
     }
 ]
+```
 
+##  How to run the Tests
+All the tests are present inside the tests folder and you can see two tests files which contain the suits for employee and user testing
+
+#### Run the Tests
+Most of the things are pre-configured you just need to  setup the .env if not already done
 
 ```
+-> Add .env file in the root if not already setup. 
+-> Run command " npm run test "
+```
+
 
 
