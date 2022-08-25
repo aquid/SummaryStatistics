@@ -1,18 +1,11 @@
-const mongoose = require('mongoose');
 const dbHandler = require('../utils/db-handler');
 const userController = require('../controllers/usersController');
-const userModel = require('../models/users');
 const fixtures = require('./fixtures');
 
 /**
  * Connect to a new in-memory database before running any tests.
  */
 beforeAll(async () => await dbHandler.connect());
-
-/**
-* Clear all test data after every test.
-*/
-// afterEach(async () => await dbHandler.clearDatabase());
 
 
 /**
@@ -22,7 +15,7 @@ afterAll(async () => await dbHandler.closeDatabase());
 
 
 /**
- * Product test suite.
+ * Users test suite.
  */
 describe('User ', () => {
 
@@ -45,7 +38,7 @@ describe('User ', () => {
     });
 
     /**
-    * Tests that a user is able to register
+    * Tests that a user is able to login
     */
     it('is able to login', async () => {
         const req = fixtures.mockRequest(

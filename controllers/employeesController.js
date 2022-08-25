@@ -19,7 +19,7 @@ exports.create = async (req, res) => {
     try {
         let data = await employeeModel.create(req.body);
         debug('create API success');
-        return res.send(data);
+        return res.status(200).send(data);
     } catch (error) {
         console.error('create API failed');
         console.error(error);
@@ -34,7 +34,7 @@ exports.delete = async (req, res) => {
         debug('deleteing empId' + _id);
         let data = await employeeModel.findByIdAndDelete(_id);
         debug('delete API for employee success');
-        return res.send(data);
+        return res.status(200).send(data);
     } catch (error) {
         console.error('delete API failed');
         console.error(error);
