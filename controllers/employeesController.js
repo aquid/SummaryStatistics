@@ -23,7 +23,7 @@ exports.create = async (req, res) => {
     } catch (error) {
         console.error('create API failed');
         console.error(error);
-        return res.status(400).send('Employee creation failed');
+        return res.status(400).send('Employee creation failed', error);
     }
 };
 
@@ -32,6 +32,9 @@ exports.delete = async (req, res) => {
     try {
         let _id = req.params.empId;
         debug('deleteing empId' + _id);
+        if(!_id) {
+            return res.status(400).send("Employee id is required");
+        }
         let data = await employeeModel.findByIdAndDelete(_id);
         debug('delete API for employee success');
         return res.status(200).send(data);
