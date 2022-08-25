@@ -23,7 +23,7 @@ exports.create = async (req, res) => {
     } catch (error) {
         console.error('create API failed');
         console.error(error);
-        return res.status(400).send('Employee creation failed', error);
+        return res.status(400).send(error._message);
     }
 };
 
