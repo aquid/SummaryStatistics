@@ -1,6 +1,12 @@
 const employeeModel = require('../models/employee');
 const debug = require('debug')('summarystatistics:employees:controller');
 
+/**
+ * @description Find the all the employees in  a list
+ * @param {*} req 
+ * @param {*} res 
+ * @returns Array of employees
+ */
 exports.find = async (req, res) => {
     debug('find API called for employees');
     try {
@@ -14,6 +20,14 @@ exports.find = async (req, res) => {
     }
 };
 
+
+/**
+ * @description Create the employees. 
+ * Accepts both single and multiple data
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 exports.create = async (req, res) => {
     debug('create API called for employees');
     try {
@@ -27,6 +41,13 @@ exports.create = async (req, res) => {
     }
 };
 
+
+/**
+ * @description Delete the employee by id
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 exports.delete = async (req, res) => {
     debug('delete API called for employees');
     try {
@@ -45,6 +66,12 @@ exports.delete = async (req, res) => {
     }
 };
 
+/**
+ * @description - Get statis for a list of employess with min, max and mean values
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 exports.getStatistics = async (req, res) => {
     debug('getStatistics API called for employees');
     
